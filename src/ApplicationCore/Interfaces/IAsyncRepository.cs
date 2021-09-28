@@ -1,20 +1,17 @@
 ﻿using ApplicationCore.Entities;
 using Ardalis.Specification;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ApplicationCore.Interfaces
-{                            
-                                         /*Constraint(kısıtlama) içine girebilecek veri türü base class dan miras almış olmalı*/
+{
+    /*Constraint(kısıtlama) içine girebilecek veri türü base class dan miras almış olmalı*/
     public interface IAsyncRepository<T> where T : BaseEntity
     {
         //(metotlar uygulanırken hangi teknolojiyi kullandığı bizi bağlamıyor infrada belirlenin rahatlıkla değiştirebilmek için interface yapısını kullanıyoruz.)
 
         //Veriyi Id ye göre Getirme
-        Task<T> GetById(int Id);
+        Task<T> GetByIdAsync(int Id);
 
         // T türü seçilen verinin bütün listesini döndürür.
         Task<List<T>> ListAllAsync();
